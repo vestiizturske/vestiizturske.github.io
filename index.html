@@ -1,82 +1,421 @@
-const vestiBaza = [
-    {
-        kategorija: "EKONOMIJA",
-        datum: "10.11.2026.",
-        naslov: "Malatya dobija ogroman solarni park čiji je temelj položen na COP31",
-        opis: "Tokom samita COP31, uz direktan prenos svečano je položen kamen temeljac za veliki solarni energetski projekat u Malatyji. Nova solarna elektrana predstavlja značajan korak napred za regionalnu energetsku infrastrukturu i održivi razvoj, dajući snažan doprinos zelenoj tranziciji i proizvodnji električne energije iz obnovljivih izvora u Turskoj.",
-        izvorIme: "Ensonhaber",
-        izvorLink: "https://www.ensonhaber.com/malatyadaki-dev-gunes-enerji-santralinin-temeli-cop31de-canli-baglantiyla-atildi-h1581377"
-    },
-    {
-        kategorija: "DRUŠTVO",
-        datum: "10.11.2026.",
-        naslov: "Ankara osvanula pod snegom nakon novog talasa padavina",
-        opis: "Glavni grad Turske zahvatile su snežne padavine koje su iznenadile stanovnike i donele zimske uslove. Nadležne službe su na terenu kako bi pratile situaciju i obezbedile nesmetano odvijanje saobraćaja, dok se građani pozivaju na oprez zbog moguće poledice.",
-        izvorIme: "TRT Haber",
-        izvorLink: "https://www.trthaber.com/haber/turkiye/ankarada-kar-yagisi-962799.html"
-    },
-    {
-        kategorija: "DRUŠTVO",
-        datum: "10.11.2026.",
-        naslov: "Nova pravila na aerodromima: Produženo vreme za zatvaranje letova",
-        opis: "Na turskim aerodromima uveden je novi režim koji donosi izmene u vremenu prijave i zatvaranja izlaza za ukrcavanje. Prema novim pravilima, izlasci za letove mogu biti zatvoreni ranije nego do sada, sa ciljem unapređenja tačnosti i efikasnosti avio-saobraćaja.",
-        izvorIme: "Sözcü",
-        izvorLink: "https://www.sozcu.com.tr/havalimaninda-yeni-donem-basladi-20-dakikalik-degisikligi-bilmeyen-ucagini-kacirabilir-p379949"
-    },
-    {
-        kategorija: "DRUŠTVO",
-        datum: "10.11.2026.",
-        naslov: "Težak lančani udes na auto-putu Trakya: Preko 70 vozila u sudaru",
-        opis: "Na auto-putu Trakya došlo je do masovnog lančanog sudara u kojem je učestvovalo više od 70 vozila, usled čega ima stradalih i povređenih osoba. Ekipe Hitne pomoći, vatrogasaca i policije odmah su upućene na teren, a saobraćaj na ovoj deonici je u prekidu.",
-        izvorIme: "Sözcü",
-        izvorLink: "https://www.sozcu.com.tr/trakya-otoyolu-nda-can-pazari-70-ten-fazla-arac-birbirine-girdi-olu-ve-yaralilar-var-p379905"
-    },
-    {
-        kategorija: "EKONOMIJA",
-        datum: "10.11.2026.",
-        naslov: "Zvaničnici iznenađeni: TOGG privukao veliku pažnju na samitu COP31",
-        opis: "Turski nacionalni električni automobil TOGG predstavljen je učesnicima na samitu COP31, gde je izazvalo veliko interesovanje i iznenađenje stranih zvaničnika. Predstavljanje ovog vozila na međunarodnoj sceni dodatno doprinosi promociji turske industrije zelene tehnologije.",
-        izvorIme: "Bigpara Hürriyet",
-        izvorLink: "https://bigpara.hurriyet.com.tr/haberler/otomotiv-haberleri/cop31de-togg-saskinligi_ID102287114/"
-    },
-    {
-        kategorija: "DRUŠTVO",
-        datum: "10.11.2026.",
-        naslov: "Nova pravila u proizvodnji sira: Pojedini sastojci i aditivi idu u istoriju",
-        opis: "U sektoru proizvodnje mlečnih proizvoda stupaju na snagu stroži propisi koji uvode zabranu korišćenja određenih supstanci i tradicionalnih komponenti u pravljenju sira. Cilj ove mere je pooštravanje kontrole kvaliteta i zaštita zdravlja potrošača.",
-        izvorIme: "Bigpara Hürriyet",
-        izvorLink: "https://bigpara.hurriyet.com.tr/haberler/genel-haberler/peynirlerde-yeni-donem-uretiminde-kullanilmayacak-yasaklandi_ID102286383/"
-    },
-    {
-        kategorija: "HRONIKA",
-        datum: "10.11.2026.",
-        naslov: "Tragedija u Izmiru: Broj stradalih u fabrici čelika Habaş porastao na 18 radnika",
-        opis: "U železari Habaş u okrugu Aliağa u Izmiru došlo je do teške nesreće tokom radova, usled čega je ukupan broj stradalih radnika porastao na 18. Pokrenuta je opsežna istraga nadležnih institucija radi utvrđivanja svih okolnosti nesreće.",
-        izvorIme: "Haberler",
-        izvorLink: "https://www.haberler.com/guncel/izmirde-hayatini-kaybeden-iscilerin-sayisi-18e-20414301-haberi/"
-    },
-    {
-        kategorija: "ZANIMLJIVOSTI",
-        datum: "09.11.2026.",
-        naslov: "Crnomorska inteligencija opet na delu: Rešenje problema sa autom zaglavljenim u snegu nasmejalo mnoge!",
-        opis: "U čuvenom turističkom centru Ajder Jajlası u okrugu Čamlıhemşin (Rize), vozač je ostao zaglavljen na snegu i ledu na strmoj rampi. Budući da u blizini nije bilo vitla ni užadi, domišljati mladići su pronašli nesvakidašnje rešenje: seli su na prtljažnik automobila i svojim nogama se uprli o prednji branik terenskog vozila koje je guralo automobil uzbrdo, što je izazvalo veliku pažnju na društvenim mrežama.",
-        izvorIme: "Milliyet",
-        izvorLink: "https://www.milliyet.com.tr/gundem/karadeniz-zekasi-yine-is-basinda-karda-kalan-otomobil-icin-bulduklari-cozum-sasirtti-7697429"
-    },
-    {
-        kategorija: "HRONIKA",
-        datum: "09.11.2026.",
-        naslov: "Tragedija u Izmiru: Broj stradalih u fabrici čelika Habaş u Aliaği porastao na 10 radnika!",
-        opis: "U železari Habaş u okrugu Aliağa u Izmiru došlo je do teške nesreće tokom radova na tečnom čeliku i održavanja kada je kran pao na peć. Prema zvaničnim informacijama, broj poginulih radnika porastao je na 10, dok je 15 osoba povređeno. Pokrenuta je opsežna istraga uz učešće mülkiye başmüfettişa i tužilaca, a privedeno je 5 lica.",
-        izvorIme: "Hürriyet",
-        izvorLink: "https://www.hurriyet.com.tr/gundem/live-izmirde-aliaga-habas-demir-celik-fabrikasinda-patlama-hayatini-kaybedenlerin-sayisi-10a-yukseldi-43371390"
-    },
-    {
-        kategorija: "EKONOMIJA",
-        datum: "06.11.2026.",
-        naslov: "Zlato pod pritiskom nafte: Goldman Sachs snizio prognozu za kraj godine, cena se približava granici od 4.000 dolara!",
-        opis: "Posle kratkog optimizma na tržištima nakon američkih izbora, cena zlata pala je za oko 1 odsto, na otprilike 4.058 dolara za unciju, jer je ponovni rast cene nafte vratio strah od inflacije. Investitori sve češće računaju na novo podizanje kamatnih stopa američke centralne banke u decembru, što ulaganje u zlato čini manje privlačnim. Zbog toga je banka Goldman Sachs smanjila svoju prognozu za kraj godine sa 4.650 na 4.150 dolara za unciju, dok Citi i dalje očekuje 4.500 dolara. U Turskoj je gram zlata pojeftinio za oko 1 odsto i kretao se oko 6.500 lira.",
-        izvorIme: "Bigpara (Hürriyet)",
-        izvorLink: "https://bigpara.hurriyet.com.tr/altin/haber/altin-fiyatlari-petrolun-baskisi-ile-geriledi-dev-banka-yil-sonu-tahminini-revize-etti_ID102283787/"
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VESTI IZ TURSKE | Najvažnije vesti iz Turske na srpskom</title>
+    <meta name="description" content="Najvažnije vesti, trendovi i zanimljivosti iz Turske, svakog dana na srpskom jeziku.">
+    
+    <!-- FONTOVI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #1c2833 0%, #2c3e50 100%);
+            color: white;
+            padding: 34px 10px 28px;
+            text-align: center;
+            border-bottom: 4px solid #c0392b;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        header h1 .flag {
+            height: 26px;
+            width: auto;
+            border-radius: 3px;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.25), 0 2px 6px rgba(0,0,0,0.3);
+        }
+        header h1 .brand-accent {
+            color: #e74c3c;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 26px; letter-spacing: 1px; gap: 8px; }
+            header h1 .flag { height: 18px; }
+            header p { letter-spacing: 1.5px; }
+        }
+        .layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 28px;
+            max-width: 930px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .container {
+            flex: 1 1 650px;
+            max-width: 650px;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .turski-kutak {
+            flex: 0 0 190px;
+            position: sticky;
+            top: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e8ecef;
+            border-radius: 8px;
+            padding: 14px 14px 6px;
+            font-size: 12.5px;
+        }
+        .turski-kutak h3 {
+            margin: 0 0 10px 0;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #95a5a6;
+        }
+        .turski-kutak ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .turski-kutak li {
+            padding: 7px 0;
+            border-top: 1px solid #f1f2f6;
+        }
+        .turski-kutak li:first-child { border-top: 0; }
+        .turski-kutak .rec-tr {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .turski-kutak .rec-sr {
+            display: block;
+            color: #7f8c8d;
+        }
+        @media (max-width: 900px) {
+            .layout {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .container { flex: none; max-width: none; order: 1; }
+            .turski-kutak {
+                flex: none;
+                position: static;
+                order: 2;
+                margin-bottom: 20px;
+            }
+        }
+        .section-title {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .news-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 5px solid #c0392b;
+            text-align: left;
+        }
+        .badge {
+            background-color: #e74c3c;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .news-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .news-description {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+        .news-source {
+            font-size: 13px;
+            color: #7f8c8d;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 10px;
+            margin: 0;
+        }
+        .news-source a {
+            color: #c0392b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #7f8c8d;
+            border-top: 1px solid #e1e8ed;
+        }
+        footer a {
+            color: #7f8c8d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .visit-counter {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        .visit-counter strong {
+            color: #c0392b;
+            font-size: 15px;
+        }
+        #cookieBanner {
+            display: none;
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            background: #1c2833;
+            color: #ecf0f1;
+            padding: 14px 16px;
+            font-size: 13px;
+            line-height: 1.5;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+        #cookieBanner .cb-inner {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #cookieBanner a { color: #e74c3c; }
+        #cookieBanner button {
+            border: 0;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        #cookieBanner .cb-yes { background: #c0392b; color: #fff; }
+        #cookieBanner .cb-no { background: transparent; color: #bdc3c7; border: 1px solid #7f8c8d; }
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .news-meta .badge { margin-bottom: 0; }
+        .news-date {
+            font-size: 12px;
+            color: #95a5a6;
+            font-weight: 500;
+        }
+        .btn-jos {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 0 0 20px 0;
+            background-color: #c0392b;
+            color: #fff;
+            border: 0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-jos:hover { background-color: #a93226; }
+        footer a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+        .glavni-meni {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .glavni-meni a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 20px;
+        }
+        .glavni-meni a:hover {
+            background: #c0392b;
+            border-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>
+        <svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Zastava Turske"><rect width="30" height="20" fill="#E30A17"/><circle cx="10.4" cy="10" r="5" fill="#fff"/><circle cx="11.8" cy="10" r="4" fill="#E30A17"/><polygon points="13.10,10.00 14.83,9.44 14.83,7.62 15.90,9.09 17.62,8.53 16.55,10.00 17.62,11.47 15.90,10.91 14.83,12.38 14.83,10.56" fill="#fff"/></svg>
+        <span>Vesti iz <span class="brand-accent">Turske</span></span>
+    </h1>
+    <p>Najvažnije vesti iz Turske na srpskom jeziku</p>
+    <nav class="glavni-meni">
+        <a href="index.html">Vesti</a>
+        <a href="o-nama.html">O nama</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<div class="layout">
+    <aside class="turski-kutak">
+        <h3>Naučimo turski</h3>
+        <ul id="turskeReci"></ul>
+    </aside>
+
+    <div class="container">
+        <div class="section-title">🔥 Udarni naslovi i turski trendovi</div>
+        <div id="newsFeed"></div>
+        <button class="btn-jos" id="prikaziJos" style="display:none;">Prikaži još vesti</button>
+    </div>
+</div>
+
+<footer>
+    <p class="visit-counter" id="visitCounter" style="display:none;">👁 Ukupno poseta: <strong id="visitTotal">0</strong></p>
+    © 2026 Vesti iz Turske | <a href="o-nama.html">O nama</a> | <a href="kontakt.html">Kontakt</a> | <a href="privacy.html">Politika privatnosti</a>
+</footer>
+
+<div id="cookieBanner">
+    <div class="cb-inner">
+        <span>Koristimo kolačiće za anonimnu statistiku poseta (država i grad čitalaca). <a href="privacy.html">Politika privatnosti</a></span>
+        <span>
+            <button class="cb-yes" id="cbYes">Prihvatam</button>
+            <button class="cb-no" id="cbNo">Odbij</button>
+        </span>
+    </div>
+</div>
+
+<!-- UČITAVANJE ODVOJENOG FAJLA SA VESTIMA -->
+<script src="vesti.js"></script>
+
+<script>
+    // ===== BROJAČ POSETA (GoatCounter) =====
+    const GOATCOUNTER_KOD = "vestiizturske";
+
+    if (GOATCOUNTER_KOD !== "MOJKOD") {
+        const gc = document.createElement("script");
+        gc.async = true;
+        gc.src = "//gc.zgo.at/count.js";
+        gc.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_KOD + ".goatcounter.com/count");
+        document.head.appendChild(gc);
+
+        fetch("https://" + GOATCOUNTER_KOD + ".goatcounter.com/counter/TOTAL.json")
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById("visitTotal").textContent = d.count;
+                document.getElementById("visitCounter").style.display = "block";
+            })
+            .catch(() => {});
     }
-];
+
+    // ===== NAUČIMO TURSKI (bočni panel) =====
+    const turskeReci = [
+        { tr: "Merhaba", sr: "Zdravo" },
+        { tr: "Günaydın", sr: "Dobro jutro" },
+        { tr: "İyi akşamlar", sr: "Dobro veče" },
+        { tr: "Teşekkür ederim", sr: "Hvala" },
+        { tr: "Lütfen", sr: "Molim" },
+        { tr: "Evet", sr: "Da" },
+        { tr: "Hayır", sr: "Ne" },
+        { tr: "Hoş geldiniz", sr: "Dobro došli" },
+        { tr: "Afiyet olsun", sr: "Prijatno" },
+        { tr: "Güle güle", sr: "Doviđenja" }
+    ];
+
+    const PO_STRANI = 10;
+    let prikazano = PO_STRANI;
+
+    function ucitajVesti() {
+        const feed = document.getElementById("newsFeed");
+        feed.innerHTML = "";
+
+        if (typeof vestiBaza === "undefined") return;
+
+        vestiBaza.slice(0, prikazano).forEach((vest) => {
+            const card = document.createElement("div");
+            card.className = "news-card";
+            
+            card.innerHTML = `
+                <div class="news-meta">
+                    <span class="badge">${vest.kategorija}</span>
+                    ${vest.datum ? `<span class="news-date">${vest.datum}</span>` : ""}
+                </div>
+                <h2 class="news-title">${vest.naslov.replace(/:\s+/, ":<br>")}</h2>
+                <p class="news-description">${vest.opis}</p>
+                <p class="news-source">Izvor: <a href="${vest.izvorLink}" target="_blank">${vest.izvorIme}</a></p>
+            `;
+            
+            feed.appendChild(card);
+        });
+
+        document.getElementById("prikaziJos").style.display =
+            prikazano < vestiBaza.length ? "block" : "none";
+    }
+
+    document.getElementById("prikaziJos").onclick = () => {
+        prikazano += PO_STRANI;
+        ucitajVesti();
+    };
+
+    function ucitajReci() {
+        const lista = document.getElementById("turskeReci");
+        lista.innerHTML = turskeReci.map(r =>
+            `<li><span class="rec-tr">${r.tr}</span><span class="rec-sr">${r.sr}</span></li>`
+        ).join("");
+    }
+    ucitajReci();
+
+    window.onload = ucitajVesti;
+    ucitajVesti();
+</script>
+</body>
+</html>

@@ -320,7 +320,7 @@
 </div>
 
 <footer>
-    <p class="visit-counter" id="visitCounter" style="display:none;">👁 Ukupno poseta: <strong id="visitTotal">0</strong></p>
+    <p class="visit-counter" id="visitCounter">👁 Ukupno pregleda: <strong id="visitTotal">0</strong></p>
     © 2026 Vesti iz Turske | <a href="o-nama.html">O nama</a> | <a href="kontakt.html">Kontakt</a> | <a href="privacy.html">Politika privatnosti</a>
 </footer>
 
@@ -352,7 +352,6 @@
             .then(r => r.json())
             .then(d => {
                 document.getElementById("visitTotal").textContent = d.count;
-                document.getElementById("visitCounter").style.display = "block";
             })
             .catch(() => {});
     }

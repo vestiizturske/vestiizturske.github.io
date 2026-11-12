@@ -1,4 +1,8 @@
-/* Zajednički stil za podstranice (O nama, Kontakt, Politika privatnosti) */
+/* =========================================================
+   VESTI IZ TURSKE - zajednički stil za SVE stranice
+   (naslovna, vesti, O nama, Kontakt, Politika privatnosti)
+   ========================================================= */
+
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f9fa;
@@ -6,6 +10,8 @@ body {
     padding: 0;
     color: #333;
 }
+
+/* ---------- ZAGLAVLJE ---------- */
 header {
     background: linear-gradient(135deg, #1c2833 0%, #2c3e50 100%);
     color: white;
@@ -14,7 +20,7 @@ header {
     border-bottom: 4px solid #c0392b;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
-header h1 {
+header .logo {
     margin: 0;
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 900;
@@ -22,20 +28,23 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 4px;
     line-height: 1.1;
+}
+header .logo a {
+    color: inherit;
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 14px;
 }
-header h1 a { color: inherit; text-decoration: none; display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 14px; }
-header h1 .flag {
+header .logo .flag {
     height: 26px;
     width: auto;
     border-radius: 3px;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.25), 0 2px 6px rgba(0,0,0,0.3);
 }
-header h1 .brand-accent { color: #e74c3c; }
+header .logo .brand-accent { color: #e74c3c; }
 header p {
     margin: 10px 0 0 0;
     font-size: 12px;
@@ -45,9 +54,9 @@ header p {
     opacity: 0.8;
 }
 @media (max-width: 480px) {
-    header h1 { font-size: 26px; letter-spacing: 1px; gap: 8px; }
-    header h1 a { gap: 8px; }
-    header h1 .flag { height: 18px; }
+    header .logo { font-size: 26px; letter-spacing: 1px; }
+    header .logo a { gap: 8px; }
+    header .logo .flag { height: 18px; }
     header p { letter-spacing: 1.5px; }
 }
 .glavni-meni {
@@ -72,7 +81,197 @@ header p {
     border-color: #c0392b;
 }
 
-/* Sadržaj stranice */
+/* ---------- NASLOVNA: raspored ---------- */
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    max-width: 930px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+.container {
+    flex: 1 1 650px;
+    max-width: 650px;
+    min-width: 0;
+}
+.section-title {
+    font-size: 22px;
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+}
+
+/* ---------- NAUČIMO TURSKI (bočni panel) ---------- */
+.turski-kutak {
+    flex: 0 0 190px;
+    position: sticky;
+    top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e8ecef;
+    border-radius: 8px;
+    padding: 14px 14px 6px;
+    font-size: 12.5px;
+}
+.turski-kutak h3 {
+    margin: 0 0 10px 0;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #95a5a6;
+}
+.turski-kutak ul { list-style: none; margin: 0; padding: 0; }
+.turski-kutak li { padding: 7px 0; border-top: 1px solid #f1f2f6; }
+.turski-kutak li:first-child { border-top: 0; }
+.turski-kutak .rec-tr { display: block; font-size: 14px; font-weight: 600; color: #2c3e50; }
+.turski-kutak .rec-sr { display: block; color: #7f8c8d; }
+
+@media (max-width: 900px) {
+    .layout { flex-direction: column; align-items: stretch; gap: 10px; }
+    .container { flex: none; max-width: none; order: 1; }
+    .turski-kutak { flex: none; position: static; order: 2; margin-bottom: 20px; }
+}
+
+/* ---------- KARTICA VESTI (naslovna) ---------- */
+.news-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #c0392b;
+}
+.news-card.sakrivena { display: none; }
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.badge {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.news-date { font-size: 12px; color: #95a5a6; font-weight: 500; }
+.news-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.news-title a { color: inherit; text-decoration: none; }
+.news-title a:hover { color: #c0392b; }
+.news-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+}
+.procitaj {
+    font-size: 14px;
+    font-weight: 600;
+    color: #c0392b;
+    text-decoration: none;
+}
+.procitaj:hover { text-decoration: underline; }
+.btn-jos {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 0 0 20px 0;
+    background-color: #c0392b;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-jos:hover { background-color: #a93226; }
+
+/* ---------- STRANICA JEDNE VESTI ---------- */
+.vest {
+    max-width: 720px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+.vest-kartica {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 26px 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #c0392b;
+}
+.vest-kartica h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    color: #2c3e50;
+    margin: 0 0 18px 0;
+    line-height: 1.25;
+}
+.vest-slika {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0 0 6px 0;
+    display: block;
+}
+.vest-slika-opis {
+    font-size: 12px;
+    color: #95a5a6;
+    margin: 0 0 18px 0;
+}
+.vest-tekst {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #444;
+}
+.vest-tekst p { margin: 0 0 16px 0; }
+.za-nas {
+    background: #fdf2f0;
+    border: 1px solid #f3d3cd;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 22px 0;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #444;
+}
+.za-nas h2 {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c0392b;
+    margin: 0 0 6px 0;
+}
+.za-nas p { margin: 0; }
+.news-source {
+    font-size: 13px;
+    color: #7f8c8d;
+    border-top: 1px solid #f1f2f6;
+    padding-top: 12px;
+    margin: 20px 0 0 0;
+}
+.news-source a { color: #c0392b; font-weight: bold; text-decoration: none; }
+@media (max-width: 480px) {
+    .vest-kartica { padding: 20px 18px; }
+    .vest-kartica h1 { font-size: 24px; }
+    .vest-tekst { font-size: 16px; }
+}
+
+/* ---------- PODSTRANICE (O nama, Kontakt, Privatnost) ---------- */
 .stranica {
     max-width: 720px;
     margin: 30px auto;
@@ -113,14 +312,10 @@ header p {
     margin: 18px 0;
     font-size: 14.5px;
 }
-.datum-izmene {
-    font-size: 13px;
-    color: #95a5a6;
-    margin-bottom: 18px;
-}
+.datum-izmene { font-size: 13px; color: #95a5a6; margin-bottom: 18px; }
 .nazad {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 14px;
     font-weight: 600;
     color: #c0392b;
@@ -132,6 +327,7 @@ header p {
     .stranica-kartica h2 { font-size: 23px; }
 }
 
+/* ---------- PODNOŽJE ---------- */
 footer {
     text-align: center;
     padding: 20px;
@@ -140,12 +336,5 @@ footer {
     color: #7f8c8d;
     border-top: 1px solid #e1e8ed;
 }
-footer a {
-    color: #7f8c8d;
-    text-decoration: none;
-    font-weight: 600;
-}
-footer a:hover {
-    color: #c0392b;
-    text-decoration: underline;
-}
+footer a { color: #7f8c8d; text-decoration: none; font-weight: 600; }
+footer a:hover { color: #c0392b; text-decoration: underline; }

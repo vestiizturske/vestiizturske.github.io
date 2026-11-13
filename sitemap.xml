@@ -2,11 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://vestiizturske.com/</loc>
-        <lastmod>2026-11-12</lastmod>
+        <lastmod>2026-11-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- ===== NOVU VEST NALEPI ODMAH ISPOD OVOG REDA ===== -->
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-upozorenje-oluja-istanbul-brodske-linije.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-taksisti-tuca-sabiha-gokcen.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-rekordni-prihodi-turizam-turska.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-najbezbedniji-gradovi-turska-numbeo.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-arda-guler-slobodni-udarac-mesi.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vestiizturske.com/vesti/2026-11-13-sad-kina-saradnja-vestacka-inteligencija.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <url>
         <loc>https://vestiizturske.com/vesti/2026-11-11-kran-umranije-sile-put.html</loc>
         <lastmod>2026-11-11</lastmod>
